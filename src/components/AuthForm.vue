@@ -26,16 +26,17 @@
               </div>
               <div class="col-md-12 mb-2 d-grid gap-2">
                 <button type="submit" class="btn btn-primary" v-if="login">Ingresar</button>
-                <button class="btn btn-secondary" @click="registerForm" v-if="login">Crear Usuario</button>
-                <button class="btn btn-primary" @click="register" v-if="!login">Registrarse</button>
-                <button class="btn btn-secondary" @click="loginForm" v-if="!login">Iniciar Sesión</button>
+                <button type="button" class="btn btn-secondary" @click="registerForm" v-if="login">Crear Usuario</button>
+                <button type="button" class="btn btn-primary" @click="register" v-if="!login">Registrarse</button>
+                <button type="button" class="btn btn-secondary" @click="loginForm" v-if="!login">Iniciar Sesión</button>
               </div>
             </div>
           </form>
         </div>
       </div>
-      <div v-if="alertSuccess" class="alert alert-success mx-auto my-2" role="alert" style="width: 500px">
+      <div v-if="alertSuccess" class="alert alert-success alert-dismissible fade show mx-auto my-2" role="alert" style="width: 500px">
         {{ alertSuccess }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     </div>
   </div>
@@ -52,7 +53,7 @@ export default {
     },
     login: true,
     formTitle: 'Iniciar Sesión',
-    urlApi: process.env.URL_API + '/auth',
+    urlApi: 'http://127.0.0.1:8000/api/auth',
     alertSuccess: ''
   }),
   methods: {
@@ -74,7 +75,7 @@ export default {
       await this.axios.post(`${this.urlApi}/login`, this.form)
           .then(res => {
             localStorage.setItem('token', res.data.access_token)
-            this.$router.push({ name: 'Products' })
+            window.location.href = '/products'
           })
           .catch(err => {
             alert(err.message)

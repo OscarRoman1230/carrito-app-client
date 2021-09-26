@@ -2,6 +2,7 @@ import * as Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap'
 import App from './App.vue'
 import router from './router'
 
