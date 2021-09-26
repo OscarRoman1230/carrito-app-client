@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Auth from "../views/Auth";
-import Products from "../views/Products";
-import UserSales from "../views/UserSales";
+import Auth from "../views/Auth"
+import Products from "../views/Products"
+import UserSales from "../views/UserSales"
+import UserCoupons from "../views/UserCoupons"
 
 const routes = [
   {
@@ -31,7 +32,7 @@ const routes = [
   {
     path: '/user-coupon',
     name: 'Coupon',
-    component: UserSales,
+    component: UserCoupons,
     meta: {
       requiresAuth: true
     }

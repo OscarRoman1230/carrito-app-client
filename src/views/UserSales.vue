@@ -1,10 +1,16 @@
 <template>
-  <div></div>
+  <div>
+    <user-sales-list />
+  </div>
 </template>
 
 <script>
+import UserSalesList from "../components/userSales/UserSalesList";
 export default {
-  name: "UserSales"
+  name: "UserSales",
+  components: {
+    UserSalesList
+  }
 }
 </script>
 

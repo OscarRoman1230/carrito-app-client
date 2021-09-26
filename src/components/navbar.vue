@@ -17,7 +17,7 @@
             <router-link exact-active-class="active" to="/user-sales" class="nav-link">Mis compras</router-link>
           </li>
           <li class="nav-item" v-if="loggedIn()">
-            <router-link exact-active-class="active" to="/user-sales" class="nav-link">Cupones</router-link>
+            <router-link exact-active-class="active" to="/user-coupon" class="nav-link">Mis cupones</router-link>
           </li>
         </ul>
         <div class="d-flex">

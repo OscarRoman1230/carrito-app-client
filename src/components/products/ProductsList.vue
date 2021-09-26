@@ -11,7 +11,7 @@
               <th>Nombre</th>
               <th>Descripción</th>
               <th>Valor($)</th>
-              <th v-if="!loggedIn">agregar al carrito</th>
+              <th v-if="loggedIn">agregar al carrito</th>
             </tr>
             </thead>
             <tbody>
@@ -20,7 +20,7 @@
               <td>{{ item.name }}</td>
               <td>{{ item.description }}</td>
               <td>{{ Intl.NumberFormat('en-US').format(item.value) }}</td>
-              <td v-if="!loggedIn">
+              <td v-if="loggedIn">
                 <button class="btn btn-outline-primary" @click="addCart(item)"><i class="fas fa-cart-plus"></i></button>
               </td>
             </tr>
@@ -30,7 +30,7 @@
       </div>
       <div class="col-4">
         <div class="row">
-          <div class="col-12" v-if="loggedIn">
+          <div class="col-12" v-if="!loggedIn">
             <div class="card">
               <div class="container">
                 <h4 class="card-title">
